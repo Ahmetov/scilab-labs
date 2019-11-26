@@ -4,13 +4,15 @@
 //7 u=7.5 o=2.1 lamda=null
 //var 6
 
+//lab 3 var 13 for + if-then-elseif + в файл, 4 задача
+
 //------------------------
 //------------------------
 //------------------------
 //------------------------
 //2 lab-------------------
 fd = mopen('D:\mis_labs\a.txt', 'wt');
-
+intervalArray = zeros(1, 400);
 x = 0 //????
 matr = zeros(2, 49)
 before = 0;
@@ -36,6 +38,7 @@ for i=1:1:401
     end
     
     interval = 2.1*(rSum - 12/2/sqrt(1)) + 7.5;
+    intervalArray(i) = interval;
     isum = isum + interval;
     mfprintf(fd, 'Временной интервал = %f\n', interval);
     for j=2:1:49
@@ -269,5 +272,50 @@ mfprintf(fd, "частота 4 тип практическая %f\n",f4);
 mfprintf(fd, "частота 1 тип теор %f\n",f4t);
 
 
+//............................lab 3
+
+sortArray = zeros(1:400);
+sortArray = gsort(intervalArray, 'g', 'i');
+sortArray7 = zeros(1:7);
+rs = sortArray(400) - sortArray(1);
+mm = 7;
+h = (rs / mm - 1);
+u0 = sortArray(1) - h/2;
+
+for i=1:1:mm
+    sortArray7(i) = u0 + i*h;
+end
+
+pArray = zeros(1:mm-1);
+
+for i=1:1:400
+    
+end
+
+for i=1:1:mm-1
+    sortArray7
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//............................lab 3
 
 mclose(fd);
